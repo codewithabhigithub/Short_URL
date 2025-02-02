@@ -14,7 +14,7 @@ const app = express();
 const PORT = 8001;
 
 // database connectivity
-connectToMongoDB("mongodb://127.0.0.1:27017/shortURL").then(() => {
+connectToMongoDB(process.env.MONGODB ?? "mongodb://127.0.0.1:27017/shortURL").then(() => {
     console.log("Connected to database");
 });
 
